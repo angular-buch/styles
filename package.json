@@ -1,0 +1,37 @@
+{
+  "name": "@angular-buch/styles",
+  "version": "0.0.1",
+  "description": "A global stylesheet to be used for the application \"BookMonkey\"",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/angular-buch/styles.git"
+  },
+  "files": [
+    "dist/*",
+    "src/*"
+  ],
+  "main": "src/styles.scss",
+  "scripts": {
+    "build": "sass --load-path=node_modules/@picocss/pico/scss/ src/styles.scss dist/styles.css",
+    "publish": "npm publish"
+  },
+  "keywords": [
+    "BookMonkey",
+    "Angular",
+    "Buch",
+    "Angular",
+    "CSS",
+    "SCSS",
+    "Stylesheet"
+  ],
+  "author": "Angular Buch Team<team@angular-buch.com> (https://angular-buch.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angular-buch/styles/issues"
+  },
+  "homepage": "https://github.com/angular-buchstyles#readme",
+  "dependencies": {
+    "@picocss/pico": "2.0.6",
+    "sass": "1.83.4"
+  }
+}
