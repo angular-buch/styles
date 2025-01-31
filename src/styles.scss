@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@use "pico" with (
+@use "@picocss/pico/scss/pico" with (
   $theme-color: "violet",
   $semantic-root-element: "app-root",
   $enable-semantic-container: true,
