@@ -76,7 +76,7 @@ section {
 
 article.book-item {
   display: grid;
-  grid-template-columns: 1fr minmax(10%, 200px);
+  grid-template-columns: 1fr minmax(17%, 200px);
   grid-template-rows: auto 1fr auto;
   gap: 0px 0px;
   grid-template-areas:
@@ -193,4 +193,34 @@ p {
 
 ul {
   padding-left: 1rem;
+}
+
+
+nav a:not(.active) {
+  --pico-color: var(--pico-secondary);
+}
+
+fieldset {
+  gap: 0.4rem;
+
+  @media screen and (max-width: 786px) {
+    flex-wrap: wrap;
+
+    input {
+      width: 100%;
+      border-radius: var(--pico-border-radius) !important;
+    }
+  }
+}
+
+input.ng-touched.ng-invalid, select.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
+  background-image: var(--pico-icon-invalid);
+  --pico-border-color: var(--pico-form-element-invalid-border-color);
+  padding-right: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
+  padding-left: var(--pico-form-element-spacing-horizontal);
+  padding-inline-start: var(--pico-form-element-spacing-horizontal) !important;
+  padding-inline-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
+  background-position: center right 0.75rem;
+  background-size: 1rem auto;
+  background-repeat: no-repeat;
 }
