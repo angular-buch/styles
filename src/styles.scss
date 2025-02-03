@@ -224,3 +224,13 @@ input.ng-touched.ng-invalid, select.ng-touched.ng-invalid, textarea.ng-touched.n
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
+
+fieldset [role="group"] {
+  flex-wrap: wrap;
+  gap: 1em;
+
+  input {
+    flex-grow: 1;
+    width: auto;
+  }
+}
