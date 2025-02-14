@@ -94,7 +94,7 @@ article.book-item {
 
   > div {
     grid-area: body;
-    margin-bottom: var(--pico-block-spacing-vertical);
+    margin: 0;
   }
 
   > img {
