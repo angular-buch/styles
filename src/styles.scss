@@ -76,7 +76,7 @@ section {
 
 article.book-item {
   display: grid;
-  grid-template-columns: 1fr minmax(17%, 200px);
+  grid-template-columns: 1fr (18%, 200px);
   grid-template-rows: auto 1fr auto;
   gap: 0px 0px;
   grid-template-areas:
