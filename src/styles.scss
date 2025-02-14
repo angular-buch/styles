@@ -84,7 +84,7 @@ article.book-item {
     "body thumbnail"
     "footer thumbnail";
 
-  &:not(:has(~ img)) {
+  &:not(:has(>img)) {
     grid-template-columns: 1fr 0px;
   }
 
