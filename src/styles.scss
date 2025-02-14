@@ -142,7 +142,7 @@ article.book-item {
     gap: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
     grid-template-areas:
       "header header"
-      ". thumbnail"
+      "body thumbnail"
       "footer footer";
 
     > img {
