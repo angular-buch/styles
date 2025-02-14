@@ -115,6 +115,7 @@ article.book-item {
     /* override pico styles */
     margin: 0;
     button {
+      margin: 0;
       padding: calc(var(--pico-form-element-spacing-vertical))
         calc(var(--pico-form-element-spacing-horizontal));
     }
