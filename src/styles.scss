@@ -23,7 +23,7 @@
     // "components/progress": false,
     // "components/tooltip": false,
     // "utilities/accessibility": false,
-    // "utilities/reduce-motion": false,,,,,,,,,,,
+    // "utilities/reduce-motion": false,,,,,,,,,,,,,
   )
 );
 
@@ -81,14 +81,23 @@ article.book-item {
   gap: 0px 0px;
   grid-template-areas:
     "header thumbnail"
-    ". thumbnail"
+    "body thumbnail"
     "footer thumbnail";
+
+  &:not(:has(~ img)) {
+    grid-template-columns: 1fr 0px;
+  }
 
   /* override pico styles */
   padding: 0;
   background-color: var(--pico-card-sectioning-background-color);
 
-  img {
+  > div {
+    grid-area: body;
+    margin-bottom: var(--pico-block-spacing-vertical);
+  }
+
+  > img {
     grid-area: thumbnail;
     margin: auto;
     border: none;
@@ -96,7 +105,7 @@ article.book-item {
     box-shadow: -7px 0px 36px -23px rgba(0, 0, 0, 0.75);
     z-index: 1;
   }
-  footer {
+  > footer {
     grid-area: footer;
     display: flex;
     justify-content: space-between;
@@ -110,7 +119,7 @@ article.book-item {
         calc(var(--pico-form-element-spacing-horizontal));
     }
   }
-  header {
+  > header {
     grid-area: header;
 
     /* override pico styles */
@@ -135,7 +144,7 @@ article.book-item {
       ". thumbnail"
       "footer footer";
 
-    img {
+    > img {
       border-radius: 0;
       margin: unset;
       box-shadow: none;
@@ -195,7 +204,6 @@ ul {
   padding-left: 1rem;
 }
 
-
 nav a:not(.active) {
   --pico-color: var(--pico-secondary);
 }
@@ -213,13 +221,19 @@ fieldset {
   }
 }
 
-input.ng-touched.ng-invalid, select.ng-touched.ng-invalid, textarea.ng-touched.ng-invalid {
+input.ng-touched.ng-invalid,
+select.ng-touched.ng-invalid,
+textarea.ng-touched.ng-invalid {
   background-image: var(--pico-icon-invalid);
   --pico-border-color: var(--pico-form-element-invalid-border-color);
-  padding-right: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
+  padding-right: calc(
+    var(--pico-form-element-spacing-horizontal) + 1.5rem
+  ) !important;
   padding-left: var(--pico-form-element-spacing-horizontal);
   padding-inline-start: var(--pico-form-element-spacing-horizontal) !important;
-  padding-inline-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
+  padding-inline-end: calc(
+    var(--pico-form-element-spacing-horizontal) + 1.5rem
+  ) !important;
   background-position: center right 0.75rem;
   background-size: 1rem auto;
   background-repeat: no-repeat;
