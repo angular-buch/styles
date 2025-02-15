@@ -177,6 +177,13 @@ h2 {
 
 nav > ul {
   flex-wrap: wrap;
+  gap: calc(var(--pico-spacing) * 0.5);
+  margin-bottom: var(--pico-spacing);
+
+  a {
+    padding: calc(var(--pico-spacing) * 0.5) calc(var(--pico-spacing) * 1.5);
+    text-decoration: none;
+  }
 }
 
 article {
@@ -203,6 +210,19 @@ p {
 
 ul {
   padding-left: 1rem;
+}
+
+:where(a:not([role=button])):is([aria-current]:not([aria-current=false]), :hover, :active, :focus), [role=link]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
+  --pico-background-color: #ad40bf;
+  --pico-border-color: var(--pico-primary-border);
+  --pico-color: var(--pico-primary-inverse);
+  --pico-box-shadow: var(--pico-button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
+  background-color: var(--pico-background-color);
+  box-shadow: var(--pico-box-shadow);
+
+  &:hover {
+    --pico-background-color: var(--pico-primary-hover-background);
+  }
 }
 
 nav a:not(.active) {
