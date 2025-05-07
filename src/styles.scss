@@ -208,6 +208,24 @@ p {
   margin-bottom: calc(0.5 * var(--pico-typography-spacing-vertical));
 }
 
+p[role="alert"] {
+  box-shadow: var(--pico-card-box-shadow);
+  border-radius: calc(var(--pico-border-radius) * 2);
+  padding: calc(var(--pico-block-spacing-vertical) * 0.66)
+    var(--pico-block-spacing-horizontal);
+  background-color: #f7f7f7;
+  border: 1px solid var(--pico-form-element-invalid-border-color);
+}
+
+p[aria-busy="true"] {
+  margin-bottom: var(--pico-block-spacing-vertical);
+  padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
+  border-radius: var(--pico-border-radius);
+  background: var(--pico-card-background-color);
+  box-shadow: var(--pico-card-box-shadow);
+  text-align: center;
+}
+
 ul {
   padding-left: 1rem;
 }
