@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@use "@picocss/pico/scss/pico" with (
-  $theme-color: "violet",
-  $semantic-root-element: "app-root",
+@use '@picocss/pico/scss/pico' with (
+  $theme-color: 'slate',
+  $semantic-root-element: 'app-root',
   $enable-semantic-container: true,
   $enable-classes: true,
   $enable-viewport: true,
@@ -23,7 +23,7 @@
     // "components/progress": false,
     // "components/tooltip": false,
     // "utilities/accessibility": false,
-    // "utilities/reduce-motion": false,,,,,,,,,,,,,
+    // "utilities/reduce-motion": false,,,,,,,,,,,,,,,,,,
   )
 );
 
@@ -32,17 +32,16 @@
   --pico-form-element-spacing-horizontal: 0.5rem;
 }
 
-section {
+section:has(> h1+button) {
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: auto 1fr;
   gap: 0px 0px;
   grid-template-areas:
-    "headline action"
-    "body body";
+    'headline action'
+    'body body';
   align-items: baseline;
-  gap: var(--pico-form-element-spacing-vertical)
-    var(--pico-form-element-spacing-horizontal);
+  gap: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
 
   > h1,
   > h2,
@@ -65,8 +64,7 @@ section {
   margin-bottom: var(--pico-block-spacing-vertical);
   box-shadow: var(--pico-card-box-shadow);
   border-radius: calc(var(--pico-border-radius) * 2);
-  padding: calc(var(--pico-block-spacing-vertical) * 0.66)
-    var(--pico-block-spacing-horizontal);
+  padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
   background-color: var(--pico-card-sectioning-background-color);
 
   h2 {
@@ -80,11 +78,11 @@ article.book-card {
   grid-template-rows: auto 1fr auto;
   gap: 0px 0px;
   grid-template-areas:
-    "header thumbnail"
-    "body thumbnail"
-    "footer thumbnail";
+    'header thumbnail'
+    'body thumbnail'
+    'footer thumbnail';
 
-  &:not(:has(>img)) {
+  &:not(:has(> img)) {
     grid-template-columns: 1fr 0px;
   }
 
@@ -131,8 +129,7 @@ article.book-card {
     }
 
     + * {
-      padding: calc(0.5 * var(--pico-block-spacing-vertical))
-        var(--pico-block-spacing-horizontal);
+      padding: calc(0.5 * var(--pico-block-spacing-vertical)) var(--pico-block-spacing-horizontal);
     }
   }
 
@@ -141,9 +138,9 @@ article.book-card {
     grid-template-rows: auto 1fr auto;
     gap: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
     grid-template-areas:
-      "header header"
-      "body thumbnail"
-      "footer footer";
+      'header header'
+      'body thumbnail'
+      'footer footer';
 
     > img {
       border-radius: 0;
@@ -200,7 +197,7 @@ article {
   }
 }
 
-[type="search"] {
+[type='search'] {
   --pico-border-radius: 0.25rem;
 }
 
@@ -208,16 +205,15 @@ p {
   margin-bottom: calc(0.5 * var(--pico-typography-spacing-vertical));
 }
 
-p[role="alert"] {
+p[role='alert'] {
   box-shadow: var(--pico-card-box-shadow);
   border-radius: calc(var(--pico-border-radius) * 2);
-  padding: calc(var(--pico-block-spacing-vertical) * 0.66)
-    var(--pico-block-spacing-horizontal);
+  padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
   background-color: #f7f7f7;
   border: 1px solid var(--pico-form-element-invalid-border-color);
 }
 
-p[aria-busy="true"] {
+p[aria-busy='true'] {
   margin-bottom: var(--pico-block-spacing-vertical);
   padding: var(--pico-block-spacing-vertical) var(--pico-block-spacing-horizontal);
   border-radius: var(--pico-border-radius);
@@ -230,8 +226,14 @@ ul {
   padding-left: 1rem;
 }
 
-:where(a:not([role=button])):is([aria-current]:not([aria-current=false]), :hover, :active, :focus), [role=link]:is([aria-current]:not([aria-current=false]), :hover, :active, :focus) {
-  --pico-background-color: #ad40bf;
+:where(a:not([role='button'])):is(
+    [aria-current]:not([aria-current='false']),
+    :hover,
+    :active,
+    :focus
+  ),
+[role='link']:is([aria-current]:not([aria-current='false']), :hover, :active, :focus) {
+  --pico-background-color: var(--pico-secondary-background);
   --pico-border-color: var(--pico-primary-border);
   --pico-color: var(--pico-primary-inverse);
   --pico-box-shadow: var(--pico-button-box-shadow, 0 0 0 rgba(0, 0, 0, 0));
@@ -239,7 +241,7 @@ ul {
   box-shadow: var(--pico-box-shadow);
 
   &:hover {
-    --pico-background-color: var(--pico-primary-hover-background);
+    --pico-background-color: var(--pico-secondary-hover-background);
   }
 }
 
@@ -265,25 +267,75 @@ select.ng-touched.ng-invalid,
 textarea.ng-touched.ng-invalid {
   background-image: var(--pico-icon-invalid);
   --pico-border-color: var(--pico-form-element-invalid-border-color);
-  padding-right: calc(
-    var(--pico-form-element-spacing-horizontal) + 1.5rem
-  ) !important;
+  padding-right: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
   padding-left: var(--pico-form-element-spacing-horizontal);
   padding-inline-start: var(--pico-form-element-spacing-horizontal) !important;
-  padding-inline-end: calc(
-    var(--pico-form-element-spacing-horizontal) + 1.5rem
-  ) !important;
+  padding-inline-end: calc(var(--pico-form-element-spacing-horizontal) + 1.5rem) !important;
   background-position: center right 0.75rem;
   background-size: 1rem auto;
   background-repeat: no-repeat;
 }
 
-fieldset [role="group"] {
+fieldset [role='group'] {
   flex-wrap: wrap;
   gap: 1em;
+  box-shadow: none;
 
   input {
     flex-grow: 1;
     width: auto;
+    border-radius: var(--pico-border-radius) !important;
+  }
+}
+
+h1:has(+ section) {
+  margin-bottom: var(--pico-block-spacing-vertical);
+}
+
+section[aria-busy='true']:has(input[type='search'])::before {
+  float: right;
+}
+
+input[type='search']:has(+ ul > li) {
+  margin-bottom: 0;
+  border-bottom: 0;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+input[type='search'] + ul:empty {
+  display: none;
+  visibility: hidden;
+}
+
+input[type='search'] + ul:has(li) {
+  display: block;
+  --pico-border-color: var(--pico-form-element-border-color);
+  border: var(--pico-border-width) solid var(--pico-border-color);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  // border-top: 0;
+  padding: 0;
+  display: block;
+  max-height: 250px;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  li {
+    display: block;
+    list-style: none;
+    margin: 0;
+
+    &:focus-within {
+      background-color: var(--pico-background-color);
+    }
+
+    a {
+      padding: calc(var(--pico-form-element-spacing-vertical) * 2)
+        calc(var(--pico-form-element-spacing-horizontal) + 1.75rem);
+      display: block;
+      text-decoration: none;
+    }
   }
 }
