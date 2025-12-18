@@ -1,6 +1,6 @@
 # `@angular-buch/styles`
 
-This repository contains the global stylesheet to be used within the example application "BookMonkey" used in the German [Angular Book](https://angular.buch.com).
+This repository contains the global stylesheet to be used within the example application "BookManager" used in the German [Angular Book](https://angular.buch.com).
 
 > :warning: This CSS Stylesheet is not used in the BookMonkey Versions (2-5) from the "Angular Buch".
 
