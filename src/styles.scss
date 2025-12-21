@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@use '@picocss/pico/scss/pico' with (
+@use 'pico' with (
   $theme-color: 'slate',
   $semantic-root-element: 'app-root',
   $enable-semantic-container: true,
@@ -23,7 +23,7 @@
     // "components/progress": false,
     // "components/tooltip": false,
     // "utilities/accessibility": false,
-    // "utilities/reduce-motion": false,,,,,,,,,,,,,,,,,,
+    // "utilities/reduce-motion": false
   )
 );
 
@@ -42,6 +42,11 @@ section:has(> h1+button) {
     'body body';
   align-items: baseline;
   gap: var(--pico-form-element-spacing-vertical) var(--pico-form-element-spacing-horizontal);
+  margin-bottom: var(--pico-block-spacing-vertical);
+  box-shadow: var(--pico-card-box-shadow);
+  border-radius: calc(var(--pico-border-radius) * 2);
+  padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
+  background-color: var(--pico-card-sectioning-background-color);
 
   > h1,
   > h2,
@@ -60,12 +65,6 @@ section:has(> h1+button) {
   > * {
     grid-area: body;
   }
-
-  margin-bottom: var(--pico-block-spacing-vertical);
-  box-shadow: var(--pico-card-box-shadow);
-  border-radius: calc(var(--pico-border-radius) * 2);
-  padding: calc(var(--pico-block-spacing-vertical) * 0.66) var(--pico-block-spacing-horizontal);
-  background-color: var(--pico-card-sectioning-background-color);
 
   h2 {
     font-size: calc(0.8 * var(--pico-font-size));
