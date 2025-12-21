@@ -15,7 +15,7 @@
   "style": "dist/styles.css",
   "scripts": {
     "build": "sass --load-path=node_modules/@picocss/pico/scss/ src/styles.scss dist/styles.css",
-    "publish": "npm publish"
+    "publish": "npm publish --access public"
   },
   "keywords": [
     "BookManager",
