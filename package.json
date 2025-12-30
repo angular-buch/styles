@@ -1,6 +1,6 @@
 {
   "name": "@angular-buch/styles",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "A global stylesheet to be used for the application \"BookManager\"",
   "repository": {
     "type": "git",
