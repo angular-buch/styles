@@ -29,12 +29,12 @@
     "SCSS",
     "Stylesheet"
   ],
-  "author": "Angular Buch Team<team@angular-buch.com> (https://angular-buch.com)",
+  "author": "Angular Buch Team <team@angular-buch.com> (https://angular-buch.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/angular-buch/styles/issues"
   },
-  "homepage": "https://github.com/angular-buchstyles#readme",
+  "homepage": "https://github.com/angular-buch/styles#readme",
   "dependencies": {
     "@picocss/pico": "2.1.1",
     "sass": "1.83.4"
