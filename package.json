@@ -18,6 +18,7 @@
   "style": "dist/styles.css",
   "scripts": {
     "build": "sass --load-path=node_modules/@picocss/pico/scss/ src/styles.scss dist/styles.css",
+    "prepublish": "npm run build",
     "publish": "npm publish"
   },
   "keywords": [
