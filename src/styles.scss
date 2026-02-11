@@ -84,6 +84,8 @@ article.book-card {
   &:not(:has(> img)) {
     grid-template-columns: 1fr 0px;
   }
+  box-shadow: none;
+  border: 1px solid var(--pico-muted-border-color);
 
   /* override pico styles */
   padding: 0;
