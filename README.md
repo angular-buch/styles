@@ -24,25 +24,39 @@ Make sure to include the necessary build tools to compile SCSS into CSS.
 
 ## Publishing
 
-This package is automatically published to NPM when a new version tag is pushed to GitHub.
+This package is published to NPM via GitHub Actions when a new version tag is pushed to GitHub.
+The workflow uses [trusted publishing](https://docs.npmjs.com/trusted-publishers/) (OIDC), so no NPM token is needed.
+Releases are [staged](https://docs.npmjs.com/staged-publishing): CI uploads the new version, but it only becomes public after a maintainer approves it with 2FA.
 
 ### Release Process
 
-1. Update the version in `package.json`:
+1. Update the version in `package.json` (creates a commit and a `v*` tag):
    ```sh
    npm version patch  # or minor/major
    ```
 
-2. Push the tag to GitHub:
+2. Push the commit and the tag to GitHub:
    ```sh
-   git push origin --tags
+   git push --follow-tags
    ```
 
 3. The GitHub Action will automatically:
    - Build the package
-   - Publish to NPM under `@angular-buch/styles`
+   - Stage the new version on NPM under `@angular-buch/styles`
+
+4. Approve the staged version (requires `npm login` and 2FA). The stage ID is printed in the workflow log:
+   ```sh
+   npm stage list @angular-buch/styles   # show staged versions and their IDs
+   npm stage approve <stage-id>
+   ```
+
+   Use `npm stage view <stage-id>` or `npm stage download <stage-id>` to inspect a staged version before approving it,
+   and `npm stage reject <stage-id>` to discard it.
+   Alternatively, staged versions can be approved in the **Staged Packages** tab on npmjs.com.
 
 ### Prerequisites
 
-- NPM_TOKEN secret must be configured in GitHub repository settings
-- Token must have publish permissions for the `@angular-buch` organization
+- A trusted publisher must be configured in the NPM package settings:
+  GitHub Actions, organization `angular-buch`, repository `styles`, workflow `publish.yml`, no environment
+- "Allow npm publish" stays unchecked, so that every release requires staged publishing
+- Approving requires an NPM account with publish rights for `@angular-buch/styles` and 2FA enabled
