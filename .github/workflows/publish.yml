@@ -26,5 +26,5 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Publish to NPM
-        run: npm publish --access public
+      - name: Stage publish to NPM (requires approval on npmjs.com)
+        run: npm stage publish --access public
