@@ -279,7 +279,7 @@ h1:has(+ section) {
   margin-bottom: var(--pico-block-spacing-vertical);
 }
 
-section[aria-busy='true']:has(input[type='search'])::before {
+:is(section,search)[aria-busy='true']:has(input[type='search'])::before {
   float: right;
 }
 
